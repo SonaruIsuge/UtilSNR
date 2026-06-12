@@ -2,18 +2,23 @@ using UnityEngine;
 
 namespace UtilSNR.Common
 {
-    public class TSingletonBehaviour<T> : MonoBehaviour where T : MonoBehaviour
+    /// <summary>
+    /// Singleton MonoBehaviour scoped to a single scene.
+    /// Instance is cleared when the GameObject is destroyed (e.g. scene unload),
+    /// and will be re-resolved if accessed again in a new scene.
+    /// </summary>
+    public class TSceneSingletonBehaviour<T> : MonoBehaviour where T : MonoBehaviour
     {
         private static T instance = null;
         private static bool isApplicationQuitting = false;
 
         /// <summary>
-        /// Get the existing instance if it exists, but do not create a new one. (May be null)
+        /// Gets the existing instance without creating a new one (may be null).
         /// </summary>
         protected static T ExistingInstance => instance;
 
         /// <summary>
-        /// Get the singleton instance, automatically finding or creating a new GameObject if it doesn't exist
+        /// Gets the singleton instance, finding or creating one if necessary.
         /// </summary>
         public static T Instance => GetInstance();
 
@@ -39,7 +44,6 @@ namespace UtilSNR.Common
             if (instance == null)
             {
                 instance = this as T;
-                DontDestroyOnLoad(transform.root.gameObject);
             }
             else if (instance != this)
             {
@@ -55,6 +59,9 @@ namespace UtilSNR.Common
             }
         }
 
+        /// <summary>
+        /// Called when the application quits, prevents re-creation during shutdown.
+        /// </summary>
         protected virtual void OnApplicationQuit()
         {
             isApplicationQuitting = true;
