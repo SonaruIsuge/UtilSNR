@@ -7,7 +7,7 @@ A comprehensive toolkit for Unity developed by **Sonaru**, designed to streamlin
 ### Via Git URL
 Open the Unity Package Manager (`Window > Package Manager`), click the `+` icon, select `Add package from git URL...`, and paste:
 ```
-https://github.com/SonaruIsuge/UtilSNR.git?path=/Assets/UtilSNR
+https://github.com/SonaruIsuge/UtilSNR.git
 ```
 
 ## License
