@@ -1,0 +1,9 @@
+{
+	"name": "UtilSNR.Runtime",
+    "rootNamespace": "UtilSNR",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "autoReferenced": true
+}

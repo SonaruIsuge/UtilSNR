@@ -1,0 +1,11 @@
+{
+	"name": "UtilSNR.Editor",
+    "rootNamespace": "UtilSNR.Editor",
+    "references": [
+        "UtilSNR.Runtime"
+    ],
+    "includePlatforms": ["Editor"],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "autoReferenced": true
+}
